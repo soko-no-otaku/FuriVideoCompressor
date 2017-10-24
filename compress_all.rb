@@ -3,7 +3,7 @@ require 'shellwords'
 
 Dir::mkdir('output') unless Dir::exist?('output')
 
-Dir.glob("*.{MOV,m4v,mp4}").each do |unescaped_input_filename|
+Dir.glob('*.{MOV,m4v,mp4}').each do |unescaped_input_filename|
   input_filename = Shellwords.escape(unescaped_input_filename)
   output_filename = Shellwords.escape(File.basename(unescaped_input_filename, '.*') + '.mp4')
 
